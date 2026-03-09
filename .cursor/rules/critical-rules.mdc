@@ -1,55 +1,34 @@
 ---
-description: Reglas criticas que nunca se deben romper
+description: Critical rules that must never be broken
 globs: "**/*"
 alwaysApply: true
 ---
 
-# Reglas Criticas
+# Critical Rules
 
-## 1. No Push sin Permiso
+## 1. No Push Without Permission
 
-- NUNCA hacer push a GitHub sin que el usuario lo pida explicitamente
-- NUNCA hacer push de informacion sensible (API keys, credenciales, .env)
-- SIEMPRE testear localmente antes de push
+Never push to GitHub unless the user explicitly asks. Never push secrets (.env, API keys, credentials). Always test locally first.
 
-## 2. Preguntar Cuando Algo Falle
+## 2. Stop and Ask on Failure
 
-SIEMPRE detener y preguntar cuando:
-- Una imagen no se puede importar automaticamente
-- Una fuente no esta disponible
-- Un efecto CSS no tiene equivalente en Figma
-- Un layout no se puede replicar exacto
-- Cualquier error de API
+If something cannot be automated (image import, font unavailable, CSS effect with no Figma equivalent, API error, layout mismatch):
 
-NUNCA:
-- Dejar un placeholder vacio sin explicar
-- Omitir un componente sin avisar
-- Asumir que algo "esta bien" si no se verifico
-- Continuar si un paso fallo silenciosamente
+1. STOP immediately
+2. Explain what failed and why
+3. Ask the user how to proceed
+4. Continue ONLY after user confirms
 
-## 3. Flujo Correcto ante Errores
+Never leave placeholders without explanation. Never skip components silently. Never assume something is fine without verification.
 
-1. Intentar automatizar
-2. Si falla → DETENER
-3. Explicar que falta o que salio mal
-4. Preguntar al usuario como proceder
-5. Continuar solo cuando el usuario confirme
+## 3. Dependencies
 
-## 4. Dependencias
+- Vanilla HTML/CSS/JS + Tailwind by default
+- No frameworks unless requested
+- No unnecessary dependencies
 
-- NO agregar dependencias innecesarias
-- NO usar frameworks a menos que se pida (vanilla HTML/CSS/JS por defecto)
-- SIEMPRE usar Tailwind CSS con config semantico
+## 4. Evolving Skills
 
-## 5. Documentacion
-
-- Cada seccion HTML: `<!-- SECTION: Nombre -->`
-- Cada clase CSS custom: comentario con proposito
-- Variables de Tailwind: comentadas con su uso
-
-## 6. Skills Evolutivos
-
-Cuando descubramos algo nuevo (bug, workaround, mejor practica):
-- Actualizar el skill correspondiente en `.cursor/skills/`
-- Agregar la entrada al `## Changelog` del skill
-- Esto asegura que no repitamos errores
+When we discover something new (bug, workaround, better practice):
+- Update the relevant skill in `.cursor/skills/`
+- Add entry to the skill's `## Changelog`

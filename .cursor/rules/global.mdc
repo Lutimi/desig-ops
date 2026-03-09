@@ -1,69 +1,41 @@
 ---
-description: Reglas globales para todos los proyectos web
+description: Global rules for all web projects in this workspace
 globs: **/*.{html,css,js,jsx,tsx,astro}
 alwaysApply: true
 ---
 
-# Global Project Rules
+# Global Rules
 
-## PASO 0 — Preguntas Obligatorias
+## Step 0 — Mandatory Questions
 
-Antes de escribir una sola linea de codigo en un proyecto nuevo, SIEMPRE pregunta:
+Before writing ANY code for a new project, always ask:
 
-1. **Idioma**: "¿En que idioma quieres la web?" (default: español)
-2. **Rubro/Industria**: "¿Cual es el rubro?" (ej: fintech, restaurante, fitness, ecommerce)
-3. **Pais/Region**: "¿Para que pais?" (default: Peru)
+1. **Language** → default: Spanish
+2. **Industry** → e.g. fintech, restaurant, fitness, ecommerce
+3. **Country** → default: Peru (S/, +51, DD/MM/YYYY)
 
-Adapta segun las respuestas:
-- Textos, moneda, formatos de fecha/telefono
-- Tono y vocabulario local (ej: "soles" no "dolares", "celular" no "movil")
-- Si Peru: S/, +51, DD/MM/YYYY
+Adapt copy, currency, date formats, tone, and local vocabulary based on answers.
 
-## Core Directive — Skills
+## Core Directive
 
-Lee y aplica el skill correspondiente ANTES de escribir codigo:
+Read and apply the matching skill from `.cursor/skills/` BEFORE writing code:
 
-| Tarea | Skill |
-|-------|-------|
-| Iniciar proyecto | `.cursor/skills/web-project-setup/SKILL.md` |
-| Escribir frontend | `.cursor/skills/frontend-design/SKILL.md` |
-| Crear design system | `.cursor/skills/design-system/SKILL.md` |
-| Screenshots/QA | `.cursor/skills/screenshot-review/SKILL.md` |
-| Exportar a Figma | `.cursor/skills/figma-export/SKILL.md` |
-| Deploy a portfolio | `.cursor/skills/portfolio-deploy/SKILL.md` |
-| Generar imagenes | `.cursor/skills/image-generation/SKILL.md` |
+| Task | Skill |
+|------|-------|
+| Start a project | `web-project-setup` |
+| Write frontend | `frontend-design` |
+| Create design system | `design-system` |
+| Visual QA | `screenshot-review` |
+| Export to Figma | `figma-export` |
+| Deploy to portfolio | `portfolio-deploy` |
+| Generate images | `image-generation` |
 
-## Project Overview
+## Repo Separation
 
-Workspace de desarrollo web profesional. Todo codigo debe sentirse profesional, con marca, y pulido — nunca "AI vibe-coded."
+| Folder | Repo | Purpose |
+|--------|------|---------|
+| `webtask/` (root) | `Lutimi/desig-ops.git` | Toolkit: skills, rules, scripts, templates |
+| `proyectos/portfolio/` | `Lutimi/portfolio.git` | Portfolio (Astro + Vercel) |
+| `proyectos/[others]/` | No repo (local) | Projects in development |
 
-## Brand Assets
-
-- Revisar `brand_assets/` para logos, guidelines, paleta y tipografia
-- Si no hay assets, usar paleta moderna por defecto y anotar que falta branding
-- Cada proyecto puede tener su propio branding en `templates/`
-
-## Separacion de Repos
-
-| Carpeta | Repo | Proposito |
-|---------|------|-----------|
-| `webtask/` (raiz) | `Lutimi/desig-ops.git` | Toolkit: skills, reglas, scripts, templates |
-| `webtask/proyectos/portfolio/` | `Lutimi/portfolio.git` | Portfolio web (Astro + Vercel) |
-| `webtask/proyectos/[otros]/` | Sin repo (local) | Proyectos en desarrollo |
-
-- Los push al portfolio se hacen SOLO desde `proyectos/portfolio/`
-- design-ops NUNCA incluye proyectos (estan en .gitignore)
-- Cuando un proyecto esta listo, se copia al portfolio y se pushea desde ahi
-
-## File Structure — Proyectos Nuevos
-
-```
-proyectos/[nombre]/
-├── src/
-│   ├── index.html
-│   ├── design-system.html
-│   ├── css/styles.css
-│   ├── js/main.js
-│   └── images/
-└── public/images/
-```
+Push to portfolio ONLY from `proyectos/portfolio/`. Design-ops never includes projects.

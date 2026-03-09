@@ -9,17 +9,9 @@ Skill for initializing web projects with the correct structure and configuration
 
 ## Initialization Flow
 
-### 1. Mandatory Questions (STEP 0)
+### 1. Confirm Step 0 Answers
 
-Before creating any files, ask:
-
-```
-1. Language     → default: Spanish
-2. Industry     → e.g. fintech, restaurant, fitness
-3. Country      → default: Peru (S/, +51, DD/MM/YYYY)
-```
-
-Do not proceed until all three are answered.
+The global rule (`global.mdc`) handles mandatory questions (language, industry, country). Before proceeding, verify those answers are available. If not, ask now.
 
 ### 2. Create Folder Structure
 
