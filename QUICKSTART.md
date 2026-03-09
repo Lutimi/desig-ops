@@ -26,6 +26,14 @@ Tell Cursor:
 > It's a landing page for [business/product description].
 > Style: [dark mode / light / minimal / bold / etc]."
 
+**Default stack: Astro + Tailwind + React islands.** This covers everything: static pages, 21st.dev components, Vercel deploy, Figma export. Only use vanilla HTML for quick throwaway prototypes.
+
+If you want 21st.dev components, just ask:
+
+> "Search 21st.dev for a modern hero section"
+
+Cursor will generate the React component and integrate it as an Astro island.
+
 Cursor reads the `web-project-setup` skill and creates the full structure.
 
 ---
