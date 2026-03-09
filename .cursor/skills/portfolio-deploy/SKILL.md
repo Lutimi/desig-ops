@@ -9,10 +9,13 @@ Flujo para publicar proyectos terminados en el portfolio web y obtener URLs publ
 
 ## Arquitectura
 
+- **Ubicacion**: `webtask/proyectos/portfolio/` (tiene su propio repo git, separado de design-ops)
 - **Repo**: `https://github.com/Lutimi/portfolio.git`
 - **Stack**: Astro + Tailwind CSS v4
 - **Deploy**: Vercel (autodeploy on push)
 - **URL publica**: Se usa con html.to.design para importar a Figma
+
+**IMPORTANTE**: Los push SOLO se hacen desde `proyectos/portfolio/`. El repo design-ops (`desig-ops`) es el toolkit y NUNCA contiene el portfolio.
 
 ## Flujo al Finalizar un Proyecto
 
@@ -77,3 +80,4 @@ La URL de Vercel se puede usar con html.to.design para importar a Figma sin nece
 ## Changelog
 
 - v1.0 (2026-03-08): Skill inicial basado en flujo del portfolio Astro con Vercel
+- v1.1 (2026-03-09): Clarificado que portfolio vive en proyectos/portfolio/ con repo propio, separado de design-ops

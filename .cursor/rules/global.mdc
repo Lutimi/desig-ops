@@ -43,7 +43,19 @@ Workspace de desarrollo web profesional. Todo codigo debe sentirse profesional, 
 - Si no hay assets, usar paleta moderna por defecto y anotar que falta branding
 - Cada proyecto puede tener su propio branding en `templates/`
 
-## File Structure
+## Separacion de Repos
+
+| Carpeta | Repo | Proposito |
+|---------|------|-----------|
+| `webtask/` (raiz) | `Lutimi/desig-ops.git` | Toolkit: skills, reglas, scripts, templates |
+| `webtask/proyectos/portfolio/` | `Lutimi/portfolio.git` | Portfolio web (Astro + Vercel) |
+| `webtask/proyectos/[otros]/` | Sin repo (local) | Proyectos en desarrollo |
+
+- Los push al portfolio se hacen SOLO desde `proyectos/portfolio/`
+- design-ops NUNCA incluye proyectos (estan en .gitignore)
+- Cuando un proyecto esta listo, se copia al portfolio y se pushea desde ahi
+
+## File Structure — Proyectos Nuevos
 
 ```
 proyectos/[nombre]/
