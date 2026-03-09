@@ -1,84 +1,91 @@
 ---
 name: screenshot-review
-description: Flujo de screenshots con Puppeteer para QA visual. Usar despues de construir o hacer cambios significativos en la web para validar visualmente.
+description: Visual QA workflow using Puppeteer screenshots. Use after building or making significant visual changes to validate the result.
 ---
 
 # Screenshot Review
 
-Flujo de QA visual usando Puppeteer para capturar y revisar screenshots de cada seccion.
+Visual QA flow using Puppeteer to capture and review screenshots of each section.
 
-## Cuando Tomar Screenshots
+## When to Take Screenshots
 
-- Despues de construir la web inicial
-- Despues de cambios visuales significativos (layout, colores, tipografia)
-- Antes de hacer push a GitHub
-- Al comparar con una referencia de diseno
+- After building the initial web page
+- After significant visual changes (layout, colors, typography)
+- Before pushing to GitHub
+- When comparing against a design reference
 
-## Cuando NO Tomar Screenshots
+## When NOT to Take Screenshots
 
-- Cuando hay animaciones CSS complejas (causan timeout en Puppeteer)
-- Cuando hay backgrounds animados o particulas
-- En esos casos: confiar en revision de codigo + snapshot del DOM en browser
+- Complex CSS animations (cause Puppeteer timeout)
+- Animated backgrounds or particles
+- In those cases: rely on code review + browser DOM snapshot
 
-## Scripts Disponibles
+## Available Scripts
 
 ### `scripts/screenshot.js` — General
+
 ```bash
 node scripts/screenshot.js              # Desktop 1440x900
 node scripts/screenshot.js --full       # Full page
 node scripts/screenshot.js --mobile     # 375x812
 node scripts/screenshot.js --tablet     # 768x1024
-node scripts/screenshot.js --sections   # Secciones individuales
+node scripts/screenshot.js --sections   # Individual sections
 ```
+
 Target: `http://localhost:3000`
 Output: `temporary_screenshots/`
 
 ### `scripts/ds-screenshot.js` — Design System
+
 ```bash
 node scripts/ds-screenshot.js
 ```
+
 Target: `http://127.0.0.1:3001/design-system.html`
 Output: `temporary_screenshots/ds-*.png`
-Secciones: `#colors`, `#typography`, `#spacing`, `#components`, `#effects`, `#assets`, `#grid`
+Sections: `#colors`, `#typography`, `#spacing`, `#components`, `#effects`, `#assets`, `#grid`
 
-### `scripts/compare-screenshot.js` — Comparacion
+### `scripts/compare-screenshot.js` — Comparison
+
 ```bash
 node scripts/compare-screenshot.js
 ```
+
 Target: `http://127.0.0.1:3001`
 Output: `temporary_screenshots/web-*.png`
 
-## Flujo de 2-Pass Review
+## 2-Pass Review Flow
 
-### Pass 1 — Detectar problemas
-1. Iniciar servidor local
-2. Tomar screenshots de cada seccion
-3. Comparar contra referencia (si existe) o evaluar calidad visual
-4. Anotar: spacing, alineacion, colores, tipografia, responsive
+### Pass 1 — Detect issues
+1. Start local server
+2. Take screenshots of each section
+3. Compare against reference (if available) or evaluate visual quality
+4. Note: spacing, alignment, colors, typography, responsive
 
-### Pass 2 — Corregir y verificar
-1. Corregir los problemas detectados
-2. Tomar screenshots nuevamente
-3. Confirmar que las correcciones se aplicaron
-4. Si hay nuevos problemas, repetir
+### Pass 2 — Fix and verify
+1. Fix detected issues
+2. Take screenshots again
+3. Confirm corrections applied
+4. If new issues found, repeat
 
-## Viewports de Testing
+## Testing Viewports
 
-| Dispositivo | Ancho | Alto |
-|-------------|-------|------|
+| Device | Width | Height |
+|--------|-------|--------|
 | Mobile | 375px | 812px |
 | Tablet | 768px | 1024px |
 | Desktop | 1440px | 900px |
 
-## Leccion Aprendida: Animaciones y Timeouts
+## Learned Lesson: Animations and Timeouts
 
-Puppeteer puede fallar con `screenshot timed out` cuando:
-- Hay muchos `@keyframes` corriendo simultaneamente
-- Hay `animation: infinite` en multiples elementos
-- Hay `backdrop-filter: blur()` en muchos nodos
+Puppeteer can fail with `screenshot timed out` when:
+- Many `@keyframes` running simultaneously
+- Multiple elements with `animation: infinite`
+- Heavy `backdrop-filter: blur()` on many nodes
 
-**Solucion**: En esos casos, verificar via browser snapshot (DOM) en vez de screenshot. Documentar en el skill que se skippeo el screenshot y por que.
+**Solution**: In those cases, verify via browser snapshot (DOM) instead of screenshot. Document in the skill that screenshot was skipped and why.
 
 ## Changelog
 
-- v1.0 (2026-03-08): Skill inicial con scripts, flujo 2-pass, leccion de animaciones
+- v1.0 (2026-03-08): Initial skill with scripts, 2-pass flow, animation lesson
+- v1.1 (2026-03-09): Rewritten in English

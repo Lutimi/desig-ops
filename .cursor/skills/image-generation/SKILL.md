@@ -1,80 +1,84 @@
 ---
 name: image-generation
-description: Generar imagenes con AI para proyectos web usando Nano Banana 2 (mcp-image). Usar cuando se necesiten imagenes hero, features, avatares o assets visuales para un proyecto.
+description: Generate AI images for web projects using Nano Banana 2 (mcp-image). Use when hero images, feature illustrations, avatars, or visual assets are needed.
 ---
 
 # Image Generation
 
-Skill para generar imagenes de alta calidad con AI para proyectos web.
+Skill for generating high-quality AI images for web projects.
 
-## Herramienta Principal
+## Primary Tool
 
 **Nano Banana 2** via MCP (`mcp-image` server)
 
-## Cuando Generar Imagenes
+## When to Generate Images
 
-- Hero section: imagen principal del landing (16:9 o 3:2)
-- Features: iconos 3D o ilustraciones para cada feature (1:1)
-- Testimonios: avatares de personas (1:1, retratos)
-- Backgrounds: texturas, gradientes, patrones
-- Logos: si el proyecto no tiene branding propio
+- Hero section: main landing image (16:9 or 3:2)
+- Features: 3D icons or illustrations per feature (1:1)
+- Testimonials: people avatars (1:1, portraits)
+- Backgrounds: textures, gradients, patterns
+- Logos: if the project has no branding yet
 
-## Prompts Efectivos
+## Effective Prompts
 
 ### Hero Images
+
 ```
-Prompt: "Futuristic 3D render of [objeto], dark background with [color] glow,
+"Futuristic 3D render of [object], dark background with [color] glow,
 glass material, volumetric lighting, professional product photography style,
 8k quality, no text"
 ```
 
 ### Feature Icons
+
 ```
-Prompt: "3D icon of [concepto], isometric view, glass material with [color]
-tint, dark background, minimal, clean, professional, 8k"
+"3D icon of [concept], isometric view, glass material with [color] tint,
+dark background, minimal, clean, professional, 8k"
 ```
 
-### Avatares
+### Avatars
+
 ```
-Prompt: "Professional headshot portrait of [descripcion], natural lighting,
+"Professional headshot portrait of [description], natural lighting,
 neutral background, photorealistic, high quality"
 ```
 
-## Tamanos Recomendados
+## Recommended Sizes
 
-| Uso | Aspect Ratio | Resolucion sugerida |
-|-----|-------------|---------------------|
+| Usage | Aspect Ratio | Suggested Resolution |
+|-------|-------------|---------------------|
 | Hero | 16:9 | 1440x810 |
 | Feature | 1:1 | 512x512 |
 | Avatar | 1:1 | 256x256 |
 | Card cover | 16:9 | 800x450 |
 | OG Image | 1.91:1 | 1200x630 |
 
-## Donde Guardar
+## Where to Save
 
 ```
-proyectos/[nombre]/
-├── src/images/          ← Imagenes de desarrollo
-└── public/images/       ← Copia para produccion
+proyectos/[name]/
+├── src/images/          ← Development images
+└── public/images/       ← Production copy
 ```
 
-Siempre guardar en ambas ubicaciones para tener respaldo.
+Always save in both locations for backup.
 
-## Reglas
+## Rules
 
-- NUNCA generar hashes largos o contenido binario en el chat
-- Si la generacion falla, explicar y preguntar al usuario
-- Las imagenes deben ser coherentes con el branding del proyecto
-- Usar el mismo estilo visual en todas las imagenes de un proyecto
-- Incluir "no text" en prompts para evitar texto ilegible en imagenes
+- NEVER generate long hashes or binary content in chat
+- If generation fails, explain and ask the user
+- Images must be coherent with the project branding
+- Use the same visual style across all images in a project
+- Include "no text" in prompts to avoid illegible text in images
 
-## Alternativas
+## Fallbacks
 
-Si mcp-image no esta disponible:
-- Pedir al usuario que genere manualmente en otra herramienta
-- Usar SVG placeholders con el branding del proyecto (como se hizo con DiveRent y WIKIVI covers)
-- Nunca dejar espacios vacios sin explicar
+If mcp-image is not available:
+- Ask the user to generate manually in another tool
+- Use SVG placeholders with project branding (as done with DiveRent and WIKIVI covers)
+- Never leave empty spaces without explanation
 
 ## Changelog
 
-- v1.0 (2026-03-08): Skill inicial con prompts, tamanos y flujo de guardado
+- v1.0 (2026-03-08): Initial skill with prompts, sizes, and save workflow
+- v1.1 (2026-03-09): Rewritten in English

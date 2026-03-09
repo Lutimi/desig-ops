@@ -1,53 +1,54 @@
 ---
 name: frontend-design
-description: Crear interfaces frontend distintivas y de calidad produccion. Usar cuando se construyan componentes web, paginas, landing pages, dashboards o cualquier UI. Genera codigo creativo y pulido que evita estetica generica de IA.
+description: Create distinctive, production-grade frontend interfaces. Use when building web components, pages, landing pages, dashboards, or any UI. Generates creative, polished code that avoids generic AI aesthetics.
 ---
 
 # Frontend Design
 
-Skill para crear interfaces frontend distintivas que evitan la estetica generica "AI slop". Implementar codigo funcional con atencion excepcional a detalles esteticos.
+Skill for creating distinctive frontend interfaces that avoid generic "AI slop" aesthetics. Implement functional code with exceptional attention to aesthetic details.
 
 ## Design Thinking
 
-Antes de codear, comprometer una direccion estetica BOLD:
+Before coding, commit to a BOLD aesthetic direction:
 
-- **Proposito**: Que problema resuelve esta interfaz? Para quien?
-- **Tono**: Elegir un extremo — brutalmente minimal, maximalista, retro-futurista, organico, luxury, playful, editorial, art deco, industrial, etc.
-- **Diferenciacion**: Que hace esto INOLVIDABLE?
+- **Purpose**: What problem does this interface solve? Who uses it?
+- **Tone**: Pick an extreme — brutally minimal, maximalist, retro-futuristic, organic, luxury, playful, editorial, art deco, industrial, etc.
+- **Differentiation**: What makes this UNFORGETTABLE?
 
-## Estetica — Reglas
+## Aesthetic Rules
 
-### Tipografia
-- Elegir fuentes de Google Fonts que sean unicas y con caracter
-- NUNCA usar: Arial, Inter generico, Roboto, system fonts como default
-- Pair: una display font bold + una body font refinada
-- Combinaciones probadas: Space Grotesk + Inter, Syne + DM Sans, Clash Display + Satoshi
+### Typography
+- Choose unique, characterful fonts from Google Fonts
+- NEVER default to: Arial, Inter (generic), Roboto, system fonts
+- Pair: bold display font + refined body font
+- Proven combos: Space Grotesk + Inter, Syne + DM Sans, Clash Display + Satoshi
 
 ### Color
-- CSS variables para paleta cohesiva
-- Colores dominantes con acentos fuertes > paletas timidas y distribuidas
-- Dark mode: fondos entre #0A-#15, nunca negro puro #000
-- Glassmorphism: `backdrop-blur` + bordes semi-transparentes + fondos con opacidad
+- CSS variables for cohesive palette
+- Dominant colors with sharp accents > timid evenly-distributed palettes
+- Dark mode: backgrounds between #0A-#15, never pure black #000
+- Glassmorphism: `backdrop-blur` + semi-transparent borders + opacity backgrounds
 
 ### Motion
-- CSS puro para animaciones (compatibilidad con Astro y vanilla)
-- Priorizar: entrada escalonada (`animation-delay`), hover states sorpresivos, scroll reveals
-- `@keyframes` custom > clases utilitarias genericas
-- CUIDADO: animaciones complejas rompen screenshots de Puppeteer — documentar cuando skipear
+- Pure CSS animations (compatible with Astro and vanilla)
+- Prioritize: staggered entrance (`animation-delay`), surprising hover states, scroll reveals
+- Custom `@keyframes` > generic utility classes
+- WARNING: Complex animations break Puppeteer screenshots — document when skipping
 
 ### Layout
-- Asimetria, overlap, flujo diagonal, elementos que rompen el grid
-- Espacio negativo generoso O densidad controlada
-- NUNCA: card-stack centrado predecible
+- Asymmetry, overlap, diagonal flow, grid-breaking elements
+- Generous negative space OR controlled density
+- NEVER: predictable centered card-stack
 
-### Fondos y Profundidad
-- Gradient meshes, noise textures, grain overlays, transparencias
-- Sombras dramaticas, blur layers
-- NUNCA: fondos solidos planos sin textura
+### Backgrounds & Depth
+- Gradient meshes, noise textures, grain overlays, transparencies
+- Dramatic shadows, blur layers
+- NEVER: flat solid backgrounds without texture
 
-## Patrones Aprendidos (NexVault)
+## Learned Patterns (NexVault)
 
-### Glassmorphism efectivo
+### Effective Glassmorphism
+
 ```css
 .glass-card {
   background: rgba(21, 25, 37, 0.6);
@@ -57,13 +58,14 @@ Antes de codear, comprometer una direccion estetica BOLD:
 }
 ```
 
-### Animaciones orbitales (hero sections)
-- Anillos rotando a diferentes velocidades y direcciones
-- Orbs flotantes con glow (`box-shadow` con color y blur)
-- Glass cards flotantes con labels de skills
-- Particulas con fade in/out
+### Orbital Animations (hero sections)
+- Rings rotating at different speeds and directions
+- Floating orbs with glow (`box-shadow` with color and blur)
+- Floating glass cards with skill labels
+- Particles with fade in/out
 
-### Text gradient
+### Text Gradient
+
 ```css
 .text-gradient {
   background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
@@ -72,7 +74,8 @@ Antes de codear, comprometer una direccion estetica BOLD:
 }
 ```
 
-### Grain overlay
+### Grain Overlay
+
 ```css
 .grain::before {
   content: "";
@@ -85,23 +88,24 @@ Antes de codear, comprometer una direccion estetica BOLD:
 }
 ```
 
-## Anti-Patrones
+## Anti-Patterns
 
-- Gradientes morado-sobre-blanco (cliche AI)
-- Layouts centrados genericos sin personalidad
-- Mismas fuentes en todos los proyectos
-- Animaciones que no aportan significado
-- Fondos solidos sin textura ni profundidad
+- Purple-on-white gradients (AI cliche)
+- Generic centered layouts with no personality
+- Same fonts across all projects
+- Animations that add no meaning
+- Flat solid backgrounds without texture or depth
 
-## Variedad Obligatoria
+## Mandatory Variety
 
-NUNCA converger en las mismas elecciones entre proyectos:
-- Alternar light/dark themes
-- Diferentes familias tipograficas
-- Diferentes estilos visuales
-- Cada proyecto debe sentirse unico
+NEVER converge on the same choices between projects:
+- Alternate light/dark themes
+- Different font families
+- Different visual styles
+- Each project must feel unique
 
 ## Changelog
 
-- v1.0 (2026-03-08): Skill inicial
-- v1.1 (2026-03-08): Agregado patrones de NexVault (glassmorphism, orbitales, grain), anti-patrones, leccion sobre animaciones y Puppeteer
+- v1.0 (2026-03-08): Initial skill
+- v1.1 (2026-03-08): Added NexVault patterns, anti-patterns, Puppeteer animation lesson
+- v1.2 (2026-03-09): Rewritten in English

@@ -1,30 +1,30 @@
 ---
 name: web-project-setup
-description: Inicializar un proyecto web desde cero con estructura correcta, Tailwind semantico y preguntas obligatorias. Usar cuando el usuario pida crear un nuevo sitio, landing page o proyecto web.
+description: Initialize a web project from scratch with correct folder structure, semantic Tailwind config, and mandatory questions. Use when the user asks to create a new site, landing page, or web project.
 ---
 
 # Web Project Setup
 
-Skill para iniciar proyectos web con la estructura y configuracion correcta desde el primer momento.
+Skill for initializing web projects with the correct structure and configuration from the start.
 
-## Flujo de Inicio
+## Initialization Flow
 
-### 1. Preguntas Obligatorias (PASO 0)
+### 1. Mandatory Questions (STEP 0)
 
-Antes de crear cualquier archivo:
-
-```
-1. Idioma → default: español
-2. Rubro/Industria → ej: fintech, restaurante, fitness
-3. Pais/Region → default: Peru (S/, +51, DD/MM/YYYY)
-```
-
-No continuar hasta tener respuestas.
-
-### 2. Crear Estructura
+Before creating any files, ask:
 
 ```
-proyectos/[nombre-proyecto]/
+1. Language     → default: Spanish
+2. Industry     → e.g. fintech, restaurant, fitness
+3. Country      → default: Peru (S/, +51, DD/MM/YYYY)
+```
+
+Do not proceed until all three are answered.
+
+### 2. Create Folder Structure
+
+```
+proyectos/[project-name]/
 ├── src/
 │   ├── index.html
 │   ├── design-system.html
@@ -37,14 +37,14 @@ proyectos/[nombre-proyecto]/
     └── images/
 ```
 
-### 3. Configurar Tailwind
+### 3. Configure Tailwind
 
-Copiar el template base desde `templates/tailwind.config.template.js` y adaptar:
-- Colores segun el branding del proyecto
-- Fuentes segun la industria y tono
-- Mantener SIEMPRE los nombres semanticos
+Copy the base template from `templates/tailwind.config.template.js` and adapt:
+- Colors based on project branding
+- Fonts based on industry and tone
+- ALWAYS keep semantic names
 
-Para Tailwind v4 (proyectos Astro/Vite), usar `@theme {}` en CSS:
+For Tailwind v4 (Astro/Vite projects), use `@theme {}` in CSS:
 
 ```css
 @import "tailwindcss";
@@ -63,35 +63,36 @@ Para Tailwind v4 (proyectos Astro/Vite), usar `@theme {}` en CSS:
 }
 ```
 
-Para Tailwind v3 (proyectos vanilla), usar `tailwind.config.js`.
+For Tailwind v3 (vanilla projects), use `tailwind.config.js`.
 
-### 4. HTML Base
+### 4. Base HTML
 
-El `index.html` debe incluir:
-- Google Fonts preload para las fuentes elegidas
-- Tailwind CSS via CDN o build
-- Estructura semantica con `<!-- SECTION: Nombre -->` en cada seccion
-- Meta tags basicos (title, description, viewport, og:image)
+The `index.html` must include:
+- Google Fonts preload for chosen fonts
+- Tailwind CSS via CDN or build
+- Semantic structure with `<!-- SECTION: Name -->` per section
+- Basic meta tags (title, description, viewport, og:image)
 
-### 5. Checklist Post-Setup
+### 5. Post-Setup Checklist
 
-- [ ] Estructura de carpetas creada
-- [ ] Tailwind configurado con nombres semanticos
-- [ ] Fuentes de Google Fonts incluidas
-- [ ] `index.html` con estructura base
-- [ ] `design-system.html` creado (ver skill `design-system`)
-- [ ] Servidor local funcionando (`live-server` o `astro dev`)
+- [ ] Folder structure created
+- [ ] Tailwind configured with semantic names
+- [ ] Google Fonts included
+- [ ] `index.html` with base structure
+- [ ] `design-system.html` created (see `design-system` skill)
+- [ ] Local server running (`live-server` or `astro dev`)
 
-## Decisiones de Arquitectura
+## Architecture Decisions
 
-| Tipo de proyecto | Stack recomendado |
-|-----------------|-------------------|
-| Landing page simple | Vanilla HTML + Tailwind CDN |
-| Multi-pagina / portfolio | Astro + Tailwind v4 |
-| App interactiva | React/Next.js + Tailwind |
+| Project type | Recommended stack |
+|-------------|-------------------|
+| Simple landing page | Vanilla HTML + Tailwind CDN |
+| Multi-page / portfolio | Astro + Tailwind v4 |
+| Interactive app | React/Next.js + Tailwind |
 
-Siempre preguntar al usuario si no esta claro que stack usar.
+Always ask the user if the stack choice is unclear.
 
 ## Changelog
 
-- v1.0 (2026-03-08): Skill inicial basado en flujo de NexVault y portfolio
+- v1.0 (2026-03-08): Initial skill based on NexVault and portfolio workflow
+- v1.1 (2026-03-09): Rewritten in English

@@ -1,70 +1,70 @@
 ---
 name: design-system
-description: Crear la pagina design-system.html obligatoria en cada proyecto. Usar cuando se inicie un proyecto nuevo o se necesite documentar tokens, componentes y estilos visuales del proyecto.
+description: Create the mandatory design-system.html page for every project. Use when starting a new project or when documenting tokens, components, and visual styles.
 ---
 
 # Design System Page
 
-Cada proyecto DEBE incluir `design-system.html` que documenta visualmente todos los tokens y componentes. Esta pagina es la referencia para exportar a Figma.
+Every project MUST include a `design-system.html` that visually documents all tokens and components. This page is the reference for Figma export.
 
-## Estructura Obligatoria (6 secciones)
+## Required Structure (6 sections)
 
 ### 1. Color Palette
-- Swatch visual de cada color
-- Nombre semantico Tailwind (`bg-primary`, `text-accent`)
-- Valor hex/CSS
-- Uso descrito (ej: "Botones principales, links activos")
-- Contraste WCAG indicado donde aplique
+- Visual swatch for each color
+- Semantic Tailwind name (`bg-primary`, `text-accent`)
+- Hex/CSS value
+- Usage description (e.g. "Primary buttons, active links")
+- WCAG contrast noted where applicable
 
 ### 2. Typography Scale
-- Todos los niveles: h1-h6, body, caption, overline, button
-- Font-family, weight, size en px, line-height
-- Preview visual de cada nivel con texto de ejemplo
-- Fuentes de Google Fonts con link de importacion
+- All levels: h1-h6, body, caption, overline, button
+- Font-family, weight, size in px, line-height
+- Visual preview of each level with sample text
+- Google Fonts import link
 
 ### 3. Spacing System
-- Escala basada en Tailwind: 1(4px), 2(8px), 3(12px), 4(16px), 6(24px), 8(32px), 12(48px), 16(64px)
-- Visualizacion con barras o bloques
-- Notas sobre cuando usar cada nivel
+- Tailwind-based scale: 1(4px), 2(8px), 3(12px), 4(16px), 6(24px), 8(32px), 12(48px), 16(64px)
+- Visual bars or blocks
+- Notes on when to use each level
 
 ### 4. Components Gallery
-- Botones: primary, secondary, ghost, disabled, loading
-- Cards: glass-card, solid-card con variantes
-- Inputs: text, password, select con estados (focus, error, disabled)
+- Buttons: primary, secondary, ghost, disabled, loading
+- Cards: glass-card, solid-card with variants
+- Inputs: text, password, select with states (focus, error, disabled)
 - Badges/Tags
 - Navbar
 - Footer
-- Cada componente con preview visual Y codigo HTML copiable
+- Each component with visual preview AND copyable HTML code
 
 ### 5. Icons & Assets
-- Iconos usados en el proyecto (SVG inline)
-- Imagenes generadas con AI (thumbnails)
-- Logo si existe
+- Icons used in the project (inline SVG)
+- AI-generated images (thumbnails)
+- Logo if available
 
 ### 6. Grid & Layout
 - Breakpoints: 375px (mobile), 768px (tablet), 1024px (laptop), 1440px (desktop)
-- Max-width del contenedor principal
-- Sistema de columnas usado
+- Main container max-width
+- Column system used
 
-## Reglas de la Pagina
+## Page Rules
 
-- Debe ser navegable con sidebar/nav interno
-- Visualmente atractiva (no un documento aburrido)
-- Usar el mismo Tailwind config del proyecto
-- Incluir notas de accesibilidad (contraste, tamanos minimos)
-- Cada seccion con ID para anclas: `#colors`, `#typography`, `#spacing`, `#components`, `#assets`, `#grid`
+- Must be navigable with internal sidebar/nav
+- Visually attractive (not a boring document)
+- Uses the same Tailwind config as the project
+- Includes accessibility notes (contrast, minimum sizes)
+- Each section with anchor ID: `#colors`, `#typography`, `#spacing`, `#components`, `#assets`, `#grid`
 
-## Conexion con Figma
+## Connection to Figma
 
-Todo lo que aparezca en `design-system.html` se convierte en:
-- **Paint Styles** en Figma (colores)
-- **Text Styles** en Figma (tipografia)
-- **Components** en Figma (botones, cards, etc.)
-- **Variables** en Figma (spacing, colores)
+Everything in `design-system.html` maps to:
+- **Paint Styles** in Figma (colors)
+- **Text Styles** in Figma (typography)
+- **Components** in Figma (buttons, cards, etc.)
+- **Variables** in Figma (spacing, colors)
 
-Ver skill `figma-export` para el flujo completo.
+See `figma-export` skill for the full workflow.
 
-## Template Base
+## Base Template
 
 ```html
 <!DOCTYPE html>
@@ -72,11 +72,10 @@ Ver skill `figma-export` para el flujo completo.
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Design System — [Proyecto]</title>
-  <!-- Tailwind + Google Fonts -->
+  <title>Design System — [Project]</title>
 </head>
 <body class="bg-background text-text-main">
-  <nav id="ds-nav"><!-- Navegacion interna --></nav>
+  <nav id="ds-nav"><!-- Internal navigation --></nav>
   <main>
     <section id="colors"><!-- Color Palette --></section>
     <section id="typography"><!-- Typography Scale --></section>
@@ -91,4 +90,5 @@ Ver skill `figma-export` para el flujo completo.
 
 ## Changelog
 
-- v1.0 (2026-03-08): Skill inicial extraido de regla monolitica, expandido con estructura detallada
+- v1.0 (2026-03-08): Initial skill extracted from monolithic rule
+- v1.1 (2026-03-09): Rewritten in English

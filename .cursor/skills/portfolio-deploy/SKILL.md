@@ -1,83 +1,86 @@
 ---
 name: portfolio-deploy
-description: Deployar proyectos terminados al portfolio web via GitHub y Vercel. Usar cuando un proyecto este listo para publicarse o cuando se necesite agregar un proyecto al portfolio.
+description: Deploy finished projects to the portfolio website via GitHub and Vercel. Use when a project is ready to publish or when adding a project to the portfolio.
 ---
 
 # Portfolio Deploy
 
-Flujo para publicar proyectos terminados en el portfolio web y obtener URLs publicas.
+Workflow for publishing finished projects to the portfolio and getting public URLs.
 
-## Arquitectura
+## Architecture
 
-- **Ubicacion**: `webtask/proyectos/portfolio/` (tiene su propio repo git, separado de design-ops)
+- **Location**: `webtask/proyectos/portfolio/` (has its own git repo, separate from design-ops)
 - **Repo**: `https://github.com/Lutimi/portfolio.git`
 - **Stack**: Astro + Tailwind CSS v4
 - **Deploy**: Vercel (autodeploy on push)
-- **URL publica**: Se usa con html.to.design para importar a Figma
+- **Public URL**: Used with html.to.design for Figma import
 
-**IMPORTANTE**: Los push SOLO se hacen desde `proyectos/portfolio/`. El repo design-ops (`desig-ops`) es el toolkit y NUNCA contiene el portfolio.
+**IMPORTANT**: Pushes are ONLY made from `proyectos/portfolio/`. The design-ops repo (`desig-ops`) is the toolkit and NEVER contains the portfolio.
 
-## Flujo al Finalizar un Proyecto
+## Workflow After Finishing a Project
 
-### 1. Preparar el proyecto
+### 1. Prepare the project
 
-- Verificar que la web funciona correctamente en local
-- Verificar que `design-system.html` esta completo
-- Tomar screenshots finales de validacion
+- Verify the site works correctly locally
+- Verify `design-system.html` is complete
+- Take final validation screenshots
 
-### 2. Copiar al portfolio
+### 2. Copy to portfolio
 
-Para proyectos vanilla (HTML/CSS/JS):
+For vanilla projects (HTML/CSS/JS):
+
 ```
-Copiar src/ y public/ del proyecto a:
-proyectos/portfolio/public/projects/[nombre-proyecto]/
-```
-
-Para proyectos que necesitan pagina dedicada:
-```
-Crear pagina en:
-proyectos/portfolio/src/pages/proyecto/[nombre].astro
+Copy src/ and public/ to:
+proyectos/portfolio/public/projects/[project-name]/
 ```
 
-### 3. Agregar card al portfolio
+For projects needing a dedicated page:
 
-Editar `proyectos/portfolio/src/pages/index.astro`:
-- Agregar entrada al array `projects` con: title, description, image, tags, href, industry, country, year
-- Si es link externo (Behance): `href` con URL completa, se muestra badge "Behance"
-- Si es proyecto local: `href` con ruta relativa
+```
+Create page at:
+proyectos/portfolio/src/pages/proyecto/[name].astro
+```
 
-### 4. Push y deploy
+### 3. Add card to portfolio
+
+Edit `proyectos/portfolio/src/pages/index.astro`:
+- Add entry to the `projects` array with: title, description, image, tags, href, industry, country, year
+- External link (Behance): full URL in `href`, shows "Behance" badge
+- Local project: relative path in `href`
+
+### 4. Push and deploy
 
 ```bash
 cd proyectos/portfolio
 git add .
-git commit -m "feat: agregar proyecto [nombre]"
+git commit -m "feat: add [project-name] project"
 git push origin main
 ```
 
-Vercel detecta el push y deploya automaticamente.
+Vercel detects the push and deploys automatically.
 
-### 5. Usar URL publica
+### 5. Use public URL
 
-La URL de Vercel se puede usar con html.to.design para importar a Figma sin necesidad de tuneles locales.
+The Vercel URL can be used with html.to.design for Figma import without local tunnels.
 
-## Tipos de Proyecto en el Portfolio
+## Project Types in Portfolio
 
-| Tipo | Donde va | Href |
+| Type | Location | Href |
 |------|----------|------|
-| Web propia (vanilla) | `public/projects/[nombre]/` | `/projects/[nombre]/src/index.html` |
-| Web propia (Astro page) | `src/pages/proyecto/[nombre].astro` | `/proyecto/[nombre]` |
-| Behance | Solo card con link | `https://behance.net/...` |
-| PDF case study | `public/projects/[nombre].pdf` + pagina dedicada | `/proyecto/[nombre]` |
+| Own web (vanilla) | `public/projects/[name]/` | `/projects/[name]/src/index.html` |
+| Own web (Astro page) | `src/pages/proyecto/[name].astro` | `/proyecto/[name]` |
+| Behance | Card with external link only | `https://behance.net/...` |
+| PDF case study | `public/projects/[name].pdf` + dedicated page | `/proyecto/[name]` |
 
-## Seccion Desafios
+## Challenges Section
 
-- Ruta: `/desafios`
-- Protegida con password (SHA-256 client-side)
-- Password actual: `desafio123`
-- Para agregar desafios: editar `src/pages/desafios.astro`
+- Route: `/desafios`
+- Protected with password (SHA-256 client-side)
+- Current password: `desafio123`
+- To add challenges: edit `src/pages/desafios.astro`
 
 ## Changelog
 
-- v1.0 (2026-03-08): Skill inicial basado en flujo del portfolio Astro con Vercel
-- v1.1 (2026-03-09): Clarificado que portfolio vive en proyectos/portfolio/ con repo propio, separado de design-ops
+- v1.0 (2026-03-08): Initial skill based on Astro portfolio with Vercel
+- v1.1 (2026-03-09): Clarified portfolio lives in proyectos/portfolio/ with own repo
+- v1.2 (2026-03-09): Rewritten in English
