@@ -11,9 +11,33 @@ Skill for initializing web projects with the correct structure and configuration
 
 ### 1. Confirm Step 0 Answers
 
-The global rule (`global.mdc`) handles mandatory questions (language, industry, country). Before proceeding, verify those answers are available. If not, ask now.
+The global rule (`global.mdc`) handles mandatory questions (language, industry, country, UI brand). Before proceeding, verify all four are answered. If not, ask now.
 
-### 2. Create Folder Structure
+### 2. Resolve UI Brand
+
+Based on the Step 0 answer for UI Brand:
+
+**User has brand assets** → Collect:
+- Primary, accent, background colors (hex)
+- Display font + body font (Google Fonts)
+- Logo file (if available)
+- Style direction (dark/light, minimal/bold, etc.)
+- Apply directly to Tailwind semantic tokens
+
+**User has inspiration URL** → Use the reference:
+- Analyze the reference site's color palette, typography, layout style
+- Use `21st_magic_component_inspiration` to find similar components on 21st.dev
+- Extract a color scheme and font pairing that matches the vibe
+- Propose the brand to the user for approval before building
+- Save the reference URL in a comment at the top of `global.css`
+
+**User has nothing** → Generate brand from context:
+- Pick colors based on industry conventions (fintech → dark + indigo/green, restaurant → warm + earthy, fitness → bold + neon)
+- Pick fonts from proven combos (see `frontend-design` skill)
+- Propose 2-3 palette options to the user
+- Only proceed after user picks one
+
+### 3. Create Folder Structure
 
 ```
 proyectos/[project-name]/

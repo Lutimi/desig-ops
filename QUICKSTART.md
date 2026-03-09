@@ -40,17 +40,28 @@ Cursor reads the `web-project-setup` skill and creates the full structure.
 
 ## Step 2 — Provide branding
 
-If you have logo and colors:
+Cursor will ask about your UI brand. Three options:
+
+**Option A — You have brand assets:**
 
 > "My logo: @brand_assets/logo.png
 > Colors: primary #FF6B00, accent #00D4FF
 > Fonts: Syne for headings, DM Sans for body"
 
-If you don't:
+**Option B — You have a reference site:**
 
-> "No branding yet. Create a professional palette."
+> "I like the style of [paste URL or drag screenshot].
+> Use that as inspiration for the brand."
 
-Tailwind uses semantic tokens — changing branding = editing one config.
+Cursor will analyze the reference, extract colors/fonts, and propose a brand for your approval.
+
+**Option C — You have nothing:**
+
+> "No branding yet. Create something professional for [industry]."
+
+Cursor will propose 2-3 palette options based on the industry. Pick one and go.
+
+Tailwind uses semantic tokens — changing branding later = editing one config.
 
 ---
 

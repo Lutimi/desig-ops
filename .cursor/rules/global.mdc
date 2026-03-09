@@ -13,6 +13,10 @@ Before writing ANY code for a new project, always ask:
 1. **Language** → default: Spanish
 2. **Industry** → e.g. fintech, restaurant, fitness, ecommerce
 3. **Country** → default: Peru (S/, +51, DD/MM/YYYY)
+4. **UI Brand** → "Do you have brand colors, fonts, or a style guide?"
+   - If YES → ask for colors (hex), fonts, logo, and style direction
+   - If NO → ask: "Any website you like as visual inspiration? (paste a URL or screenshot)"
+   - If neither → generate a professional brand based on industry and tone
 
 Adapt copy, currency, date formats, tone, and local vocabulary based on answers.
 
