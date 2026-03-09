@@ -1,0 +1,57 @@
+---
+description: Reglas globales para todos los proyectos web
+globs: **/*.{html,css,js,jsx,tsx,astro}
+alwaysApply: true
+---
+
+# Global Project Rules
+
+## PASO 0 — Preguntas Obligatorias
+
+Antes de escribir una sola linea de codigo en un proyecto nuevo, SIEMPRE pregunta:
+
+1. **Idioma**: "¿En que idioma quieres la web?" (default: español)
+2. **Rubro/Industria**: "¿Cual es el rubro?" (ej: fintech, restaurante, fitness, ecommerce)
+3. **Pais/Region**: "¿Para que pais?" (default: Peru)
+
+Adapta segun las respuestas:
+- Textos, moneda, formatos de fecha/telefono
+- Tono y vocabulario local (ej: "soles" no "dolares", "celular" no "movil")
+- Si Peru: S/, +51, DD/MM/YYYY
+
+## Core Directive — Skills
+
+Lee y aplica el skill correspondiente ANTES de escribir codigo:
+
+| Tarea | Skill |
+|-------|-------|
+| Iniciar proyecto | `.cursor/skills/web-project-setup/SKILL.md` |
+| Escribir frontend | `.cursor/skills/frontend-design/SKILL.md` |
+| Crear design system | `.cursor/skills/design-system/SKILL.md` |
+| Screenshots/QA | `.cursor/skills/screenshot-review/SKILL.md` |
+| Exportar a Figma | `.cursor/skills/figma-export/SKILL.md` |
+| Deploy a portfolio | `.cursor/skills/portfolio-deploy/SKILL.md` |
+| Generar imagenes | `.cursor/skills/image-generation/SKILL.md` |
+
+## Project Overview
+
+Workspace de desarrollo web profesional. Todo codigo debe sentirse profesional, con marca, y pulido — nunca "AI vibe-coded."
+
+## Brand Assets
+
+- Revisar `brand_assets/` para logos, guidelines, paleta y tipografia
+- Si no hay assets, usar paleta moderna por defecto y anotar que falta branding
+- Cada proyecto puede tener su propio branding en `templates/`
+
+## File Structure
+
+```
+proyectos/[nombre]/
+├── src/
+│   ├── index.html
+│   ├── design-system.html
+│   ├── css/styles.css
+│   ├── js/main.js
+│   └── images/
+└── public/images/
+```

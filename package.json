@@ -1,0 +1,14 @@
+{
+  "name": "webtask",
+  "version": "1.0.0",
+  "description": "Modern website project with screenshot workflow and professional design",
+  "scripts": {
+    "dev": "npx live-server src --port=3000 --no-browser",
+    "screenshot": "node scripts/screenshot.js",
+    "screenshot:full": "node scripts/screenshot.js --full"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2",
+    "puppeteer": "^24.0.0"
+  }
+}

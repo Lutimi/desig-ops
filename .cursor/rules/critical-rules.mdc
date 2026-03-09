@@ -1,0 +1,55 @@
+---
+description: Reglas criticas que nunca se deben romper
+globs: "**/*"
+alwaysApply: true
+---
+
+# Reglas Criticas
+
+## 1. No Push sin Permiso
+
+- NUNCA hacer push a GitHub sin que el usuario lo pida explicitamente
+- NUNCA hacer push de informacion sensible (API keys, credenciales, .env)
+- SIEMPRE testear localmente antes de push
+
+## 2. Preguntar Cuando Algo Falle
+
+SIEMPRE detener y preguntar cuando:
+- Una imagen no se puede importar automaticamente
+- Una fuente no esta disponible
+- Un efecto CSS no tiene equivalente en Figma
+- Un layout no se puede replicar exacto
+- Cualquier error de API
+
+NUNCA:
+- Dejar un placeholder vacio sin explicar
+- Omitir un componente sin avisar
+- Asumir que algo "esta bien" si no se verifico
+- Continuar si un paso fallo silenciosamente
+
+## 3. Flujo Correcto ante Errores
+
+1. Intentar automatizar
+2. Si falla → DETENER
+3. Explicar que falta o que salio mal
+4. Preguntar al usuario como proceder
+5. Continuar solo cuando el usuario confirme
+
+## 4. Dependencias
+
+- NO agregar dependencias innecesarias
+- NO usar frameworks a menos que se pida (vanilla HTML/CSS/JS por defecto)
+- SIEMPRE usar Tailwind CSS con config semantico
+
+## 5. Documentacion
+
+- Cada seccion HTML: `<!-- SECTION: Nombre -->`
+- Cada clase CSS custom: comentario con proposito
+- Variables de Tailwind: comentadas con su uso
+
+## 6. Skills Evolutivos
+
+Cuando descubramos algo nuevo (bug, workaround, mejor practica):
+- Actualizar el skill correspondiente en `.cursor/skills/`
+- Agregar la entrada al `## Changelog` del skill
+- Esto asegura que no repitamos errores

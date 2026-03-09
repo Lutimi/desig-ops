@@ -1,0 +1,44 @@
+---
+description: Estandares obligatorios de Tailwind CSS
+globs: **/*.{html,css,js,jsx,tsx,astro}
+alwaysApply: true
+---
+
+# Tailwind CSS — Estandares Obligatorios
+
+## Config Semantico
+
+- SIEMPRE usar `tailwind.config` (o `@theme` en v4) con nombres semanticos
+- Definir TODOS los colores y fuentes en el config, NUNCA hardcodear hex en clases
+- Cambiar el branding completo = editar solo el config
+
+### Nombres obligatorios
+
+```
+Colores:
+  background, surface, surface-alt
+  primary, primary-hover
+  accent, accent-hover
+  text-main, text-muted, text-dim
+  border, border-hover
+  glass, glass-hover
+
+Fuentes:
+  display (titulos)
+  body (texto)
+```
+
+## Mapeo a Figma
+
+Los nombres semanticos mapean directo a design tokens en Figma:
+- `bg-primary` → Paint Style `Brand / bg-primary`
+- `text-text-main` → Paint Style `Text / text-text-main`
+- `font-display` → Text Style `font-display / ...`
+
+## Reglas
+
+- NO usar clases con hex directo (`bg-[#123456]`) — siempre semantico
+- NO mezclar nombres genericos con semanticos
+- SI el proyecto usa Tailwind v4, definir tokens con `@theme {}`
+- SI el proyecto usa Tailwind v3, definir en `tailwind.config.js extend.colors`
+- SIEMPRE comentar las variables del config con su uso

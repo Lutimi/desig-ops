@@ -1,0 +1,38 @@
+# Dependencias
+node_modules/
+
+# Screenshots temporales
+temporary_screenshots/
+
+# Proyectos (cada uno tiene su propio repo)
+proyectos/
+
+# Imagenes generadas (pesadas, no son config)
+brand_assets/generated/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+*.swp
+*.swo
+
+# PDFs y archivos personales
+*.pdf
+
+# Root src/ (starter template, no es parte del toolkit)
+src/
+
+# Archivos temporales
+trigger-ref.md
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Lock files (cada proyecto maneja el suyo)
+package-lock.json
